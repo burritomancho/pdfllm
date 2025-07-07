@@ -28,13 +28,13 @@ def create_vectordatabase_from_pdfs(documents, api_key, file):
 
     embedding_function = get_embedding_function(api_key)
 
-    vector_database = create_vectordatabase(docs, embedding_function, file)
+    vector_database = create_vectordatabase(docs, embedding_function)
 
     return vector_database
 
 
-def load_vectordatabase(file, api_key, vectordatabase_path="db"):
-    embedding_function = get_embedding_function(api_key=api_key)
-    return Chroma(persist_directory=vectordatabase_path,
-                  embedding_function=embedding_function,
-                  collection_name=clean_filename(file))
+# def load_vectordatabase(file, api_key, vectordatabase_path="db"):
+#     embedding_function = get_embedding_function(api_key=api_key)
+#     return Chroma(persist_directory=vectordatabase_path,
+#                   embedding_function=embedding_function,
+#                   collection_name=clean_filename(file))
