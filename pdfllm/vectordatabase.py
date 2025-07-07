@@ -18,8 +18,8 @@ def create_vectordatabase(chunks, embedding_function, vectordatabase_path="db"):
 
     vector_database = Chroma.from_documents(documents=unique_chunks,
                                             ids=list(unique_ids),
-                                            embedding=embedding_function,
-                                            persist_directory=vectordatabase_path)
+                                            embedding=embedding_function)
+                                            # persist_directory=vectordatabase_path)
     return vector_database
 
 
