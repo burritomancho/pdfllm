@@ -7,8 +7,9 @@ from dotenv import load_dotenv
 import os
 import streamlit as st
 
-key = os.environ['OPENAI_API_KEY']
 load_dotenv()
+key = os.environ['OPENAI_API_KEY']
+
 
 st.title("PDF Q&A App (LangChain + OpenAI)")
 uploaded_file = st.file_uploader("Upload your PDF", type="pdf", )
