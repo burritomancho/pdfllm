@@ -2,12 +2,12 @@ from vectordatabase import create_vectordatabase_from_pdfs
 from rag import query_document
 from document_utils import retrieving_pdf, clean_filename
 
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 import os
 import streamlit as st
 
-load_dotenv()
+# load_dotenv()
 key = os.environ['OPENAI_API_KEY']
 
 
