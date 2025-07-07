@@ -18,8 +18,8 @@ def create_vectordatabase(chunks, embedding_function, vectordatabase_path="db"):
 
     vector_database = Chroma.from_documents(documents=unique_chunks,
                                             ids=list(unique_ids),
-                                            embedding=embedding_function)
-                                            # persist_directory=vectordatabase_path)
+                                            embedding=embedding_function,
+                                            persist_directory=vectordatabase_path)
     return vector_database
 
 
@@ -28,13 +28,13 @@ def create_vectordatabase_from_pdfs(documents, api_key, file):
 
     embedding_function = get_embedding_function(api_key)
 
-    vector_database = create_vectordatabase(docs, embedding_function)
+    vector_database = create_vectordatabase(docs, embedding_function, file)
 
     return vector_database
 
 
-# def load_vectordatabase(file, api_key, vectordatabase_path="db"):
-#     embedding_function = get_embedding_function(api_key=api_key)
-#     return Chroma(persist_directory=vectordatabase_path,
-#                   embedding_function=embedding_function,
-#                   collection_name=clean_filename(file))
+def load_vectordatabase(file, api_key, vectordatabase_path="db"):
+    embedding_function = get_embedding_function(api_key=api_key)
+    return Chroma(persist_directory=vectordatabase_path,
+                  embedding_function=embedding_function,
+                  collection_name=clean_filename(file))
