@@ -1,6 +1,6 @@
-from pdfllm.vectordatabase import create_vectordatabase_from_pdfs
-from pdfllm.rag import query_document
-from pdfllm.document_utils import retrieving_pdf, clean_filename
+from vectordatabase import create_vectordatabase_from_pdfs
+from rag import query_document
+from document_utils import retrieving_pdf, clean_filename
 
 from dotenv import load_dotenv
 
